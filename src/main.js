@@ -3,7 +3,7 @@
 // Phaser 3 Movement Studies
 // Concepts: Arcade physics, atlas and atlasXML loading, atlas animation (custom and generated frames), physics world wrapping, physics body properties (velocity, acceleration, drag, max acceleration), keyboard (isDown, JustPressed, DownDuration, UpDuration)
 // Some mechanics inspired by and adapted from Game Mechanic Explorer https://gamemechanicexplorer.com
-// The two example atlases  are commercial assets and should not be used for your own projects - buy them from https://www.kenney.nl/assets :)
+// The two example atlases are commercial assets and should not be used for your own projects - buy them from https://www.kenney.nl/assets :)
 
 // tame the javashrek
 'use strict';
