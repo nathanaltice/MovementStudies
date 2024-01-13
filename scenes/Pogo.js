@@ -3,13 +3,15 @@ class Pogo extends Phaser.Scene {
         super('pogoScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.VELOCITY = 500
         this.MAX_X_VEL = 500   // pixels/second
         this.MAX_Y_VEL = 5000
         this.physics.world.gravity.y = 3000
+    }
 
+    create() {
         // set bg color
         this.cameras.main.setBackgroundColor('#8811AA')
 
@@ -21,7 +23,10 @@ class Pogo extends Phaser.Scene {
         }
 
         // print Scene name
-        this.add.text(game.config.width/2, 30, 'Scene 6: Pogo', { font: '14px Futura', fill: '#FFFFFF' }).setOrigin(0.5)
+        this.add.text(game.config.width/2, 30, 'Scene 6: Pogo', { 
+            font: '14px Futura', 
+            fill: '#FFFFFF' 
+        }).setOrigin(0.5)
         
         // add some physics clouds
         this.cloud01 = this.physics.add.sprite(600, 100, 'platformer_atlas', 'cloud_1')
@@ -98,7 +103,13 @@ class Pogo extends Phaser.Scene {
                 default:
                     break
             }
-        });
+        })
+
+        // debug key listener (assigned to D key)
+        this.input.keyboard.on('keydown-D', function() {
+            this.physics.world.drawDebug = this.physics.world.drawDebug ? false : true
+            this.physics.world.debugGraphic.clear()
+        }, this)
 
         // add physics collider
         this.physics.add.collider(this.alien, this.ground)

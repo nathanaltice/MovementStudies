@@ -99,6 +99,12 @@ class VariableJump extends Phaser.Scene {
                     break
             }
         })
+
+        // debug key listener (assigned to D key)
+        this.input.keyboard.on('keydown-D', function() {
+            this.physics.world.drawDebug = this.physics.world.drawDebug ? false : true
+            this.physics.world.debugGraphic.clear()
+        }, this)
     }
 
     update() {

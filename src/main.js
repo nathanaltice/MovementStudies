@@ -15,6 +15,7 @@ const tileSize = 35
 
 // main game object
 let config = {
+    parent: 'game-canvas',
     type: Phaser.WEBGL,
     width: 840,
     height: 525,

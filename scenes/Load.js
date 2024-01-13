@@ -61,6 +61,9 @@ class Load extends Phaser.Scene {
             repeat: -1
         })
 
+        // display info text below game canvas
+        document.getElementById('info').innerHTML = 'Cursors: move/jump | 1–7: Choose scene | D: toggle debug'
+
         // ...and pass to the next Scene
         this.scene.start('velocityScene')
     }
