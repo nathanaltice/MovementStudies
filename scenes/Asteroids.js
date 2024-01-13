@@ -3,17 +3,22 @@ class Asteroids extends Phaser.Scene {
         super('asteroidsScene')
     }
 
-    create() {
+    init() {
         // define variables
         this.ANG_VELOCITY = 180    // degrees/second
         this.MAX_VELOCITY = 500    // pixels/second
         this.DRAG = 0.25
+    }
 
+    create() {
         // change bg color
         this.cameras.main.setBackgroundColor('#111')
 
         // print Scene name
-        this.add.text(game.config.width/2, 30, 'Scene 7: Asteroids-style Movement', { font: '14px Futura', fill: '#FFFFFF' }).setOrigin(0.5)
+        this.add.text(game.config.width/2, 30, 'Scene 7: Asteroids-style Movement', { 
+            font: '14px Futura', 
+            fill: '#FFFFFF' 
+        }).setOrigin(0.5)
 
         // setup ship physics sprite
         this.ship01 = this.physics.add.sprite(game.config.width/2, game.config.height/2, 'shooter_atlas', 'spaceShips_003.png').setScale(SCALE)
@@ -62,7 +67,7 @@ class Asteroids extends Phaser.Scene {
                 default:
                     break
             }
-        });
+        })
     }
 
     update() {

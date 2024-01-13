@@ -3,18 +3,23 @@ class Runner extends Phaser.Scene {
         super('runnerScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.JUMP_VELOCITY = -700
         this.MAX_JUMPS = 2
         this.SCROLL_SPEED = 4
         this.physics.world.gravity.y = 2600
+    }
 
+    create() {
         // add tile sprite
         this.talltrees = this.add.tileSprite(0, 0, game.config.width, game.config.height, 'talltrees').setOrigin(0)
 
         // print Scene name
-        this.add.text(game.config.width/2, 30, 'Scene 5: Endless Strollin\'', { font: '14px Futura', fill: '#00AA11' }).setOrigin(0.5)
+        this.add.text(game.config.width/2, 30, 'Scene 5: Endless Strollin\'', { 
+            font: '14px Futura', 
+            fill: '#00AA11' 
+        }).setOrigin(0.5)
 
         // make ground tiles group
         this.ground = this.add.group()

@@ -3,12 +3,14 @@ class Acceleration extends Phaser.Scene {
         super('accelerationScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.ACCELERATION = 500
         this.DRAG = 200    // DRAG < ACCELERATION = icy slide
         this.physics.world.gravity.y = 1000
+    }
 
+    create() {
         // set bg color
         this.cameras.main.setBackgroundColor('#666')
 

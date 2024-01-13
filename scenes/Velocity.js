@@ -3,11 +3,13 @@ class Velocity extends Phaser.Scene {
         super('velocityScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.MAX_VELOCITY = 300    // pixels/second
         this.physics.world.gravity.y = 1000
+    }
 
+    create() {
         // set bg color
         this.cameras.main.setBackgroundColor('#CCC')
 
@@ -35,51 +37,8 @@ class Velocity extends Phaser.Scene {
         this.alien = this.physics.add.sprite(game.config.width/2, game.config.height/2, 'platformer_atlas', 'front').setScale(SCALE)
         this.alien.setCollideWorldBounds(true)
        
-        // create alien animations from texture atlas
-        // see: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Animations.html#toc1__anchor
-        // key: string, frames: array, frameRate: int, repeat: int
-        // see: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Animations.html#.GenerateFrameNames__anchor
-        // generateFrameNames returns an array of frame names derived from the rules provided in the configuration object parameter
-        this.anims.create({ 
-            key: 'walk', 
-            frames: this.anims.generateFrameNames('platformer_atlas', {      
-                prefix: 'walk',
-                start: 1,
-                end: 11,
-                suffix: '',
-                zeroPad: 4 
-            }), 
-            frameRate: 30,
-            repeat: -1 
-        })
-        this.anims.create({
-            key: 'idle',
-            defaultTextureKey: 'platformer_atlas',
-            frames: [
-                { frame: 'front' }
-            ],
-            repeat: -1
-        })
-        // won't need this for now, but we're taking care of it for a future scene
-        this.anims.create({
-            key: 'jump',
-            defaultTextureKey: 'platformer_atlas',
-            frames: [
-                { frame: 'jump' }
-            ],
-        })
-
         // add a fly friend 🦟
         this.fly = this.add.sprite(game.config.width/2 + 150, game.config.height/2, 'platformer_atlas', 'fly_normal').setScale(SCALE)
-        this.anims.create({
-            key: 'flyflap',
-            frames: [
-                { frame: 'fly_normal' },
-                { frame: 'fly_fly'}
-            ],
-            defaultTextureKey: 'platformer_atlas',
-            repeat: -1
-        });
         // go ahead and start the flapping animation since the fly is non-interactive
         this.fly.anims.play('flyflap')
 

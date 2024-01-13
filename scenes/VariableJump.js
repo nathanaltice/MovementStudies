@@ -3,16 +3,18 @@ class VariableJump extends Phaser.Scene {
         super('variableJumpScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.ACCELERATION = 1500
-        this.MAX_X_VEL = 500   // pixels/second
+        this.MAX_X_VEL = 500        // pixels/second
         this.MAX_Y_VEL = 5000
-        this.DRAG = 600    // DRAG < ACCELERATION = icy slide
-        this.MAX_JUMPS = 2 // change for double/triple/etc. jumps 🤾‍♀️
+        this.DRAG = 600             // DRAG < ACCELERATION = icy slide
+        this.MAX_JUMPS = 2          // change for double/triple/etc. jumps 🤾‍♀️
         this.JUMP_VELOCITY = -700
         this.physics.world.gravity.y = 2600
+    }
 
+    create() {
         // set bg color
         this.cameras.main.setBackgroundColor('#223344')
 

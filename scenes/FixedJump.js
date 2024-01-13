@@ -3,15 +3,17 @@ class FixedJump extends Phaser.Scene {
         super('fixedJumpScene')
     }
 
-    create() {
+    init() {
         // variables and settings
         this.ACCELERATION = 500
-        this.MAX_X_VEL = 500   // pixels/second
+        this.MAX_X_VEL = 500    // pixels/second
         this.MAX_Y_VEL = 5000
-        this.DRAG = 600    // DRAG < ACCELERATION = icy slide
+        this.DRAG = 600         // DRAG < ACCELERATION = icy slide
         this.JUMP_VELOCITY = -1000
         this.physics.world.gravity.y = 3000
+    }
 
+    create() {
         // set bg color
         this.cameras.main.setBackgroundColor('#227B96')
 
@@ -23,7 +25,10 @@ class FixedJump extends Phaser.Scene {
         }
 
         // print Scene name
-        this.add.text(game.config.width/2, 30, 'Scene 3: Tight Jumpin\'', { font: '14px Futura', fill: '#FFFFFF' }).setOrigin(0.5)
+        this.add.text(game.config.width/2, 30, 'Scene 3: Tight Jumpin\'', { 
+            font: '14px Futura', 
+            fill: '#FFFFFF' 
+        }).setOrigin(0.5)
         
         // add some physics clouds
         this.cloud01 = this.physics.add.sprite(600, 100, 'platformer_atlas', 'cloud_1')
