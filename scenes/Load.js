@@ -18,9 +18,9 @@ class Load extends Phaser.Scene {
         // initializing our animations here ensures that we can use them across all scenes without re-loading them
 
         // create alien animations from texture atlas
-        // see: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Animations.html#toc1__anchor
+        // see: https://docs.phaser.io/api-documentation/namespace/types-animations
         // key: string, frames: array, frameRate: int, repeat: int
-        // see: https://photonstorm.github.io/phaser3-docs/Phaser.Types.Animations.html#.GenerateFrameNames__anchor
+        // see: https://docs.phaser.io/api-documentation/class/animations-animationmanager#generateframenames
         // generateFrameNames returns an array of frame names derived from the rules provided in the configuration object parameter
         this.anims.create({ 
             key: 'walk', 
@@ -34,6 +34,7 @@ class Load extends Phaser.Scene {
             frameRate: 30,
             repeat: -1 
         })
+
         this.anims.create({
             key: 'idle',
             defaultTextureKey: 'platformer_atlas',

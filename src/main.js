@@ -1,5 +1,5 @@
 // Nathan Altice
-// Updated: 1/13/24
+// Updated: 1/22/25
 // Phaser 3 Movement Studies
 // Concepts: Arcade physics, atlas and atlasXML loading, atlas animation (custom and generated frames), physics world wrapping, physics body properties (velocity, acceleration, drag, max acceleration), keyboard (isDown, JustPressed, DownDuration, UpDuration)
 // Some mechanics inspired by and adapted from Game Mechanic Explorer https://gamemechanicexplorer.com

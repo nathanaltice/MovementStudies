@@ -7,7 +7,7 @@ class Runner extends Phaser.Scene {
         // variables and settings
         this.JUMP_VELOCITY = -700
         this.MAX_JUMPS = 2
-        this.SCROLL_SPEED = 4
+        this.SCROLL_SPEED = 2
         this.physics.world.gravity.y = 2600
     }
 
